@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import images from '../../assets/image'; // Assuming you'll add these images here
+import images from '../../assets/image';
 
-const featuredCoursesData = [
+const defaultCourses = [
   {
     courseImage: images.medication_management_course,
     courseAlt: "Medication Management Course",
@@ -47,23 +47,17 @@ const featuredCoursesData = [
   },
 ];
 
-const FeaturedCoursesSection = () => {
+const FeaturedCoursesSection = ({ courses = defaultCourses, title = "Other courses that might interest you" }) => {
   return (
-    <section className="bg-white py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 text-black">
+    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 text-black">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row justify-between items-center mb-12 text-center sm:text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-0">Featured Courses</h2>
-          <Link href="/courses" className="text-[#1A6EDC] hover:underline font-semibold text-lg">
-            View all courses
-          </Link>
-        </div>
-
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-center">{title}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {featuredCoursesData.map((course, index) => (
+          {courses.map((course, index) => (
             <Link
               key={index}
               href={`/courses/${course.slug}`}
-              className="transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl focus:scale-105 focus:shadow-2xl bg-white rounded-lg shadow-md overflow-hidden border border-gray-200"
+              className="transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl focus:scale-105 focus:shadow-2xl bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
             >
               <div className="relative w-full h-[180px] sm:h-[200px] overflow-hidden">
                 <Image
