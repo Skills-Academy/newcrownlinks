@@ -1,16 +1,14 @@
 // This is a scaffold for the course detail page. Replace placeholder data as needed.
-import CourseHeroSection from '@/app/components/course/CourseHeroSection';
-import CourseMetaBar from '@/app/components/course/CourseMetaBar';
-import CourseMainContent from '@/app/components/course/CourseMainContent';
-import FeaturedCoursesSection from '@/app/components/home/FeaturedCoursesSection';
+import CourseHeroSection from '@/app/components/course-description/CourseHeroSection';
+import CourseMainContent from '@/app/components/course-description/CourseMainContent';
+import RelatedCoursesSection from '@/app/components/home/FeaturedCoursesSection';
 import TestimonialsSection from '@/app/components/About/Testimonials';
-import CallToActionSection from '@/app/components/About/CallToActionSection';
-import Footer from '@/app/components/home/Footer';
+import CallToActionSection from '@/app/components/home/CtaSection';
+import Footer from '@/app/components/course-description/Footer';
 import Navbar from '@/app/components/Navbar';
 import { coursesData } from '@/app/data/coursesData';
 import images from '@/app/assets/image';
 
-// Example extra data for demonstration
 const extraCourseData = [
   {
     slug: "level-5-diploma-in-leadership-and-management-for-adult-care",
@@ -28,7 +26,7 @@ const extraCourseData = [
       'Domiciliary care services',
       'Day services',
       'Respite services',
-      'Community based services',
+      'Community based services'
     ],
     whatLearn: 'This qualification covers a range of skills and knowledge relating to leadership and management of adult care services in England, such as: Decision-making, safeguarding, leading and managing services, service improvement, leading person centred care and governance and regulatory requirements.',
     requirements: 'For anyone working as Manager or aspiring to become a Manager.',
@@ -38,7 +36,7 @@ const extraCourseData = [
       enrolled: 255,
       access: 'LIFETIME',
       price: '£2000',
-      oldPrice: '£2500',
+      oldPrice: '£2500'
     },
     otherCourses: [
       {
@@ -46,30 +44,30 @@ const extraCourseData = [
         title: 'MEDICATION MANAGEMENT',
         instructor: 'ADE INAOLAJI',
         price: '£2000',
-        oldPrice: '£2500',
+        oldPrice: '£2500'
       },
       {
         image: '/family-learning.jpg',
         title: 'LEVEL 3 DIPLOMA IN ADULT CARE',
         instructor: 'ADE INAOLAJI',
         price: '£2000',
-        oldPrice: '£2500',
+        oldPrice: '£2500'
       },
       {
         image: '/fire-safety.jpg',
         title: 'FIRE SAFETY AWARENESS',
         instructor: 'ADE INAOLAJI',
         price: '£2000',
-        oldPrice: '£2500',
+        oldPrice: '£2500'
       },
       {
         image: '/fire-safety.jpg',
         title: 'FIRE SAFETY AWARENESS',
         instructor: 'ADE INAOLAJI',
         price: '£2000',
-        oldPrice: '£2500',
-      },
-    ],
+        oldPrice: '£2500'
+      }
+    ]
   },
   {
     slug: "level-3-diploma-in-adult-care",
@@ -82,7 +80,7 @@ const extraCourseData = [
       'Care assistants',
       'Support workers',
       'Key workers',
-      'Adult care staff',
+      'Adult care staff'
     ],
     whatLearn: 'You will learn about person-centred care, safeguarding, health and safety, and supporting individuals with their physical and emotional needs.',
     requirements: 'For anyone working in or aspiring to work in adult care.',
@@ -92,7 +90,7 @@ const extraCourseData = [
       enrolled: 120,
       access: 'LIFETIME',
       price: '£1500',
-      oldPrice: '£1800',
+      oldPrice: '£1800'
     },
     otherCourses: [
       {
@@ -100,16 +98,16 @@ const extraCourseData = [
         title: 'LEVEL 5 DIPLOMA IN LEADERSHIP AND MANAGEMENT FOR ADULT CARE',
         instructor: 'ADE INAOLAJI',
         price: '£2000',
-        oldPrice: '£2500',
+        oldPrice: '£2500'
       },
       {
         image: '/medication-management.jpg',
         title: 'MEDICATION MANAGEMENT',
         instructor: 'ADE INAOLAJI',
         price: '£500',
-        oldPrice: '£700',
-      },
-    ],
+        oldPrice: '£700'
+      }
+    ]
   },
   {
     slug: "medication-management",
@@ -121,7 +119,7 @@ const extraCourseData = [
     whoFor: [
       'Care staff',
       'Support workers',
-      'Anyone handling medication',
+      'Anyone handling medication'
     ],
     whatLearn: 'You will learn about medication types, safe storage, administration procedures, and legal responsibilities.',
     requirements: 'For anyone responsible for administering medication in care settings.',
@@ -131,7 +129,7 @@ const extraCourseData = [
       enrolled: 60,
       access: 'LIFETIME',
       price: '£500',
-      oldPrice: '£700',
+      oldPrice: '£700'
     },
     otherCourses: [
       {
@@ -139,32 +137,50 @@ const extraCourseData = [
         title: 'LEVEL 5 DIPLOMA IN LEADERSHIP AND MANAGEMENT FOR ADULT CARE',
         instructor: 'ADE INAOLAJI',
         price: '£2000',
-        oldPrice: '£2500',
+        oldPrice: '£2500'
       },
       {
         image: '/family-learning.jpg',
         title: 'LEVEL 3 DIPLOMA IN ADULT CARE',
         instructor: 'ADE INAOLAJI',
         price: '£1500',
-        oldPrice: '£1800',
-      },
-    ],
+        oldPrice: '£1800'
+      }
+    ]
   },
   // Add more extra data as needed
 ];
 
+const sampleTestimonials = [
+  {
+    name: 'Beatrice',
+    role: 'Mental Health Nurse',
+    text: "I'm really happy Crownlinks Academy. The information they provide (Powerpoint worksheets e.t.c) were excellent.",
+    avatar: ''
+  },
+  {
+    name: 'Sarah Johnson',
+    role: 'Web Developer',
+    text: 'This platform transformed my career! The courses are well structured and the instructors are top-notch. Within months, I went from a beginner to landing my first freelance project.',
+    avatar: ''
+  },
+  {
+    name: 'Beatrice',
+    role: 'Mental Health Nurse',
+    text: "I'm really happy Crownlinks Academy. The information they provide (Powerpoint worksheets e.t.c) were excellent.",
+    avatar: ''
+  }
+];
+
 export default async function CourseDetailPage(props: { params: { slug: string } }) {
   const params = await props.params;
-  // Find the course card data (for image and title)
   const cardData = coursesData.find(c => c.slug === params.slug);
-  // Find the extra course data (for details)
   const extraData = extraCourseData.find(c => c.slug === params.slug);
 
   if (!cardData || !extraData) {
     return <div className="text-center py-20 text-2xl">Course not found</div>;
   }
 
-  // Merge cardData and extraData for the hero and details
   const course = {
     ...cardData,
     ...extraData,
@@ -183,11 +199,21 @@ export default async function CourseDetailPage(props: { params: { slug: string }
   return (
     <main>
       <Navbar />
-      <CourseHeroSection image={course.image} title={course.title} />
-      <CourseMetaBar instructor={course.instructor} instructorImage={images.instructor_ade_profile} category={course.category} students={course.students} lastUpdated={course.lastUpdated} />
-      <CourseMainContent overview={course.overview} whoFor={course.whoFor} whatLearn={course.whatLearn} requirements={course.requirements} card={course.card} />
-      <FeaturedCoursesSection />
-      <TestimonialsSection />
+      <CourseHeroSection
+  image={course.image}
+  title={course.title}
+  instructor={course.instructor}
+  instructorImage={images.instructor_ade_profile}
+  price={course.card.price}
+  oldPrice={course.card.oldPrice}
+  duration={course.card.duration}
+  lessons={course.card.lessons}
+  enrolled={course.card.enrolled}
+  access={course.card.access}
+/>
+      <CourseMainContent overview={course.overview} whoFor={course.whoFor} whatLearn={course.whatLearn} requirements={course.requirements} />
+      <RelatedCoursesSection />
+      <TestimonialsSection  />
       <CallToActionSection />
       <Footer />
     </main>
