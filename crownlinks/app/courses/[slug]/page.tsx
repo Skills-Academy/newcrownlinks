@@ -171,8 +171,11 @@ const sampleTestimonials = [
   }
 ];
 
-export default async function CourseDetailPage(props: { params: { slug: string } }) {
-  const params = await props.params;
+interface PageProps {
+  params: { slug: string }
+}
+
+export default function Page({ params }: PageProps) {
   const cardData = coursesData.find(c => c.slug === params.slug);
   const extraData = extraCourseData.find(c => c.slug === params.slug);
 
