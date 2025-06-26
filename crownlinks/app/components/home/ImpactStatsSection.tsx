@@ -10,7 +10,7 @@ const ImpactStatsSection = () => (
       <h2 className="text-2xl md:text-2xl font-bold text-center mb-12 text-[#242424]">
         Delivering Measurable Impact in Online Education
       </h2>
-      <div className="flex flex-col md:flex-row justify-center items-center md:space-x-24 space-y-8 md:space-y-0">
+      <div className="flex flex-col md:flex-row justify-between items-center md:space-x-24 space-y-8 md:space-y-0">
         {stats.map((stat, idx) => (
           <div key={idx} className="text-center">
             <div className="text-4xl md:text-5xl font-bold text-[#1976d2] mb-2">{stat.value}</div>
