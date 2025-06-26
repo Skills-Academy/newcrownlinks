@@ -1,4 +1,3 @@
-// This is a scaffold for the course detail page. Replace placeholder data as needed.
 import CourseHeroSection from '@/app/components/course-description/CourseHeroSection';
 import CourseMainContent from '@/app/components/course-description/CourseMainContent';
 import RelatedCoursesSection from '@/app/components/home/FeaturedCoursesSection';
@@ -13,7 +12,7 @@ const extraCourseData = [
   {
     slug: "level-5-diploma-in-leadership-and-management-for-adult-care",
     instructor: 'ADE INAOLAJI',
-    category: 'Leadership Management Course',
+    category: 'Lea dership Management Course',
     students: 1,
     lastUpdated: 'February 27, 2025',
     overview: 'This qualification covers the knowledge and skills required to work in a leadership and management role in a range of settings where services support individuals with different needs. The qualification contains units which are competence based and some knowledge-based units.',
