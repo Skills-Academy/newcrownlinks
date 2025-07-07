@@ -15,11 +15,11 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative z-5 text-center px-4 sm:px-6 lg:px-8 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight">
+      <div className="relative z-5 text-center max-w-9xl mx-auto px-6 sm:px-8 lg:px-20">
+        <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight tracking-tight">
           Empower Your Future 
-          with Crownlinks Academy and 
-          Unlock Boundless Opportunities
+          with <br /> Crownlinks Academy and 
+          Unlock Boundless <br /> Opportunities
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-md md:max-w-xl mx-auto px-2 sm:px-0">
           Learn in-demand skills that drive success in health, social care, leadership and
